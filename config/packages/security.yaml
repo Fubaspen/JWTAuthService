@@ -1,0 +1,31 @@
+security:
+    password_hashers:
+        App\Entity\User: 'auto'
+
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern: ^/api/login
+            stateless: true
+            # логика аутентификации и генерации токена будет в LoginController.
+
+        api:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
+
+
+    access_control:
+        # точка входа для получения токена
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/verify, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
