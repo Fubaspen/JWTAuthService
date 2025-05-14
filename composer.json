@@ -75,10 +75,14 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "chmod -R 775 var",
+            "chown -R www-data:www-data var"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "chmod -R 775 var",
+            "chown -R www-data:www-data var"
         ]
     },
     "conflict": {

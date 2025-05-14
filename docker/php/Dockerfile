@@ -16,9 +16,6 @@ WORKDIR /var/www/html
 
 COPY . .
 
-RUN composer install --no-interaction --optimize-autoloader
-
-
 COPY docker/php/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
