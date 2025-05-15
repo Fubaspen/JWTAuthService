@@ -1,0 +1,74 @@
+|-- bin
+|   |-- console
+|   \-- phpunit
+|-- config
+|   |-- jwt
+|   |   |-- private.pem
+|   |   \-- public.pem
+|   |-- packages
+|   |   |-- cache.yaml
+|   |   |-- doctrine.yaml
+|   |   |-- doctrine_migrations.yaml
+|   |   |-- framework.yaml
+|   |   |-- lexik_jwt_authentication.yaml
+|   |   |-- routing.yaml
+|   |   |-- security.yaml
+|   |   |-- twig.yaml
+|   |   |-- validator.yaml
+|   |   \-- web_profiler.yaml
+|   |-- routes
+|   |   |-- framework.yaml
+|   |   |-- security.yaml
+|   |   \-- web_profiler.yaml
+|   |-- bundles.php
+|   |-- preload.php
+|   |-- routes.yaml
+|   \-- services.yaml
+|-- docker
+|   |-- nginx
+|   |   \-- nginx.conf
+|   \-- php
+|       |-- docker-entrypoint.sh
+|       \-- Dockerfile
+|-- migrations
+|   |-- .gitignore
+|   \-- Version20250514093427.php
+|-- public
+|   \-- index.php
+|-- src
+|   |-- Command
+|   |   \-- CreateUserCommand.php
+|   |-- Controller
+|   |   |-- Api
+|   |   |   |-- LoginController.php
+|   |   |   \-- VerifyController.php
+|   |   \-- .gitignore
+|   |-- DTO
+|   |   \-- LoginRequest.php
+|   |-- Entity
+|   |   |-- .gitignore
+|   |   \-- User.php
+|   |-- Repository
+|   |   |-- .gitignore
+|   |   \-- UserRepository.php
+|   \-- Kernel.php
+|-- templates
+|   |-- api
+|   |   |-- login
+|   |   |   \-- index.html.twig
+|   |   \-- verify
+|   |       \-- index.html.twig
+|   \-- base.html.twig
+|-- .env
+|-- .env.dev
+|-- .env.test
+|-- .gitignore
+|-- composer.json
+|-- composer.lock
+|-- docker-compose.yml
+|-- phpunit.dist.xml
+|-- phpunit.xml.dist
+|-- README.md
+|-- symfony.lock
+|-- tree.txt
+\-- TreeWithoutIgnore.ps1

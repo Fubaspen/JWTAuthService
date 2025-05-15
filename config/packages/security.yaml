@@ -16,7 +16,7 @@ security:
         login:
             pattern: ^/api/login
             stateless: true
-            # логика аутентификации и генерации токена будет в LoginController.
+
 
         api:
             pattern: ^/api

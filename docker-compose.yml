@@ -7,12 +7,14 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/var/www/html
+      - composer-cache:/tmp/composer-cache
     environment:
       - APP_ENV=${APP_ENV:-dev}
       - APP_SECRET=${APP_SECRET:-secret}
       - DATABASE_URL=${DATABASE_URL:-sqlite:///%kernel.project_dir%/var/data.db}
       - JWT_SECRET_KEY=/var/www/html/config/jwt/private.pem
       - JWT_PUBLIC_KEY=/var/www/html/config/jwt/public.pem
+      - COMPOSER_CACHE_DIR=/tmp/composer-cache
 
   nginx:
     image: nginx:alpine

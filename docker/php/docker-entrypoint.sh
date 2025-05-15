@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+export COMPOSER_CACHE_DIR=${COMPOSER_CACHE_DIR:-/tmp/composer-cache}
+
 echo "Installing PHP dependencies..."
 composer install --no-interaction --optimize-autoloader
 

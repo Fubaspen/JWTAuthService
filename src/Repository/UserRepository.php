@@ -27,11 +27,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->getEntityManager()->flush();
     }
 
-    public function findOneByEmail(string $email): ?User
-    {
-        return $this->findOneBy(['email' => $email]);
-    }
-
     public function save(User $user, bool $flush = true): void
     {
         $this->getEntityManager()->persist($user);
@@ -48,4 +43,12 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         }
     }
 
+    public function findOneByEmail(string $email): ?User
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('LOWER(u.email) = :email')
+            ->setParameter('email', strtolower($email))
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }
